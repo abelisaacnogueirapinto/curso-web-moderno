@@ -7,7 +7,7 @@ const menorSalario = (func, funcAtual) => {
   return func.salario < funcAtual.salario ? func : funcAtual;
 };
 const maiorSalario = (maior, funcAtual) => {
-  return maior.salario < funcAtual.salario ? maior : funcAtual; //seleciona o funcionario de portugal com menor salario
+  return maior.salario < funcAtual.salario ? maior : funcAtual;
 };
 
 axios.get(url).then((response) => {
