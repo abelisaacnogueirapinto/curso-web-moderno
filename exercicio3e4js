@@ -1,0 +1,14 @@
+//exercicio 3
+function expoente(valor, expoe) {
+  return Math.pow(valor, expoe);
+}
+expoente(9, 2);
+let valor = expoente(2, 2);
+console.log(valor);
+
+//exercicio 4
+function resultado(dividendo, divisor) {
+  console.log(dividendo / divisor);
+  console.log(dividendo % divisor);
+}
+resultado(9, 3);
