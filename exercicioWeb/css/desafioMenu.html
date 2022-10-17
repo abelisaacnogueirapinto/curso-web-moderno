@@ -4,21 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Desafio Menu</title>
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Poppins:ital,wght@0,300;0,400;0,500;1,200;1,300;1,400&display=swap" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
         * { box-sizing: border-box;}
 
 
         body {
-            font-family: 'Oswald', sans-serif ;
+            font-family:  'Abel', sans-serif;
             margin: 0; 
-            background-color: rgba(206, 202, 202, 0.541);
+            background-color: white;
         }
         .cabecalho { 
-            background:rgba(12, 12, 12, 0.801);
+            background:#225D4D;
             border-bottom: solid 5px #4faddb;
-            height: 100px;
+            height: 150px;
             box-sizing: content-box;
 
         }
@@ -35,24 +35,26 @@
         
         .menu-toggle {
             float: right;
-            color: #eee;
-            background-color: #555;
+            color: rgba(238, 238, 238, 0.207);
+            background-color: #286291;
             border: solid 1px #777;
             border-radius: 5px;
-            height: 40px;
+            height: 45px;
             padding: 10px 20px;
-            margin: 20px 15px;
+            margin: 57px 15px;
         }
 
         .menu {
             display: inline-block;
             vertical-align: top;
-            height: 20px;
-            padding: 25px;
+            height: 150px;
+            padding: 50px;
         }
         .menu ul {
             margin: 0;
-            padding: 0;
+            padding-left: 300px;
+            padding-top: 35px;
+
         }
         .menu li {
             display: inline-block;
@@ -61,7 +63,7 @@
         .cabecalho a {
             text-decoration: none;
             color: #eee;
-            font-size: 1.3em;
+            font-size: 1.8em;
          }
 
         .menu a {
@@ -70,12 +72,12 @@
 
         .autenticacao {
             float:right;
-            height: 80px;
-            padding: 25px;
+            height: 200px;
+            padding-top: 80px;
             
         }
         .menu a:hover,.menu a.selected {
-            background-color: #4faddb;
+            background-color: #54AFE6;
             color: black;
         }
         .botao { 
@@ -100,7 +102,7 @@
 
 
         .destaque {
-            background: #f50a31;
+            background: #286291;
             color:#fff;
 
         }
@@ -112,7 +114,8 @@
         @media(max-width:680px) {
 
             .menu {
-                display:none;
+                display:block;
+                color:#000;
             } 
 
         }
@@ -133,7 +136,7 @@
     <header class="cabecalho">
         <div class="logo">
             <a href="#inicio">
-                <img src="logo_size.jpg" alt="Logo" />
+                <img src="logocabefepequena.png" alt="Logo" />
             </a>
         </div>
         <button class="menu-toggle">
@@ -142,22 +145,25 @@
         <nav class="menu">
             <ul>
                 <li>
-                    <a href="#inicio" >Início</a>
+                    <a href="#sobre" >Sobre</a>
                 </li>
                 <li>
-                    <a href="#cursos">Cursos</a>
+                    <a href="#convênios">Convêncios</a>
                 </li>
                 <li>
-                    <a href="#sobre">Sobre</a>
+                    <a href="#serviços">Serviços</a>
                 </li>
                 <li>
-                    <a href="#contato">Contato</a>
+                    <a href="#contato">Contatos</a>
+                </li>
+                <li>
+                    
                 </li>
             </ul>
         </nav>
         <aside class="autenticacao">
-            <a href="#login">Login</a>
-            <a href="#registar" class="botao destaque">Registrar</a>
+            
+            <a href="#" class="botao destaque"> &#x1F512 Associado</a>
         </aside>
     </header>
 
@@ -174,5 +180,6 @@
         }
     </script>
 </body>
+
 
 </html>
