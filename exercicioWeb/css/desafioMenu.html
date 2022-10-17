@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -18,14 +18,14 @@
         .cabecalho { 
             background:#225D4D;
             border-bottom: solid 5px #4faddb;
-            height: 150px;
+            height: 130px;
             box-sizing: content-box;
 
         }
         .logo {
             display: inline-block;
-            height: 150px;
-            width: 150px;
+            height: 130px;
+            width: 130px;
             padding: 0px;
 
         }
@@ -35,25 +35,26 @@
         
         .menu-toggle {
             float: right;
-            color: rgba(238, 238, 238, 0.207);
-            background-color: #286291;
-            border: solid 1px #777;
-            border-radius: 5px;
+            color: rgba(255, 251, 251, 0.863);
+            background-color: #4faddb;
+            border: 5px whitesmoke;
+            border-radius: 8px;
             height: 45px;
             padding: 10px 20px;
-            margin: 57px 15px;
+            margin: 45px 15px;
         }
 
         .menu {
             display: inline-block;
             vertical-align: top;
-            height: 150px;
-            padding: 50px;
+            height: 100px;
+            padding: 35px;
+            
         }
         .menu ul {
             margin: 0;
-            padding-left: 300px;
-            padding-top: 35px;
+            padding-left: 250px;
+            padding-top:30px;
 
         }
         .menu li {
@@ -62,70 +63,65 @@
         }
         .cabecalho a {
             text-decoration: none;
-            color: #eee;
-            font-size: 1.8em;
+            color: white;
+            font-size: 1.3em;
          }
 
         .menu a {
-            padding: 15px;
+            padding: 10px;
         }
 
-        .autenticacao {
+        /*.autenticacao {
             float:right;
-            height: 200px;
-            padding-top: 80px;
+            height: 100px;
+            margin-bottom: 80px;
+            padding-bottom: 100px;
+            
+        }*/
+        .menu a:hover,.menu a.selected {
+            background-color: #296291;
+            font-weight: 900;
+            font-stretch: condensed;
+            color: black;
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.082);
             
         }
-        .menu a:hover,.menu a.selected {
-            background-color: #54AFE6;
-            color: black;
-        }
-        .botao { 
-            border-radius: 30px;
-            padding: 10px 25px;
-            margin: 10px;
-            box-shadow: 2px 2px 4px black;
-
-        }
+               
+               
         
-        .destaque {
-            color:rgb(237, 207, 207);
-            background: tomato;
-            box-shadow: 2px 2px 1px 1px #000
-        }
-        .destaque:active { /* quando o botao é clicado pelo mouse */
-            box-shadow: none;
-            color:rgb(178, 171, 182);
+        /*.destaque {
+            background: #225D4D;
+            border-bottom: solid 1px black;
 
-        }
+        }*/
+        
+            
 
-
-
-        .destaque {
-            background: #286291;
-            color:#fff;
-
-        }
-        @media(min-width: 679px) {
+        @media(min-width: 600px) {
             .menu-toggle{
+                display:none;
+            }
+            
+         
+    
+        }
+        @media(max-width: 650) {
+            .menu  {
                 display: none;
             }
-        }
-        @media(max-width:680px) {
-
-            .menu {
-                display:block;
-                color:#000;
-            } 
-
+            
         }
 
-        @media(max-width:910px) {
-            .autenticacao {
-                display: none;
+        @media(max-width: 800) {
+
+            .menu ul {
+                padding-left: 250px;
+            }
+            .menu li {
+                display: inline-block;
             }
         }
-
+ 
 
     
        
@@ -145,33 +141,41 @@
         <nav class="menu">
             <ul>
                 <li>
+                    <a href="#inicio" >Início</a>
+                </li>
+                <li>
                     <a href="#sobre" >Sobre</a>
                 </li>
                 <li>
-                    <a href="#convênios">Convêncios</a>
+                    <a href="#convenios">Convênios</a>
                 </li>
                 <li>
-                    <a href="#serviços">Serviços</a>
+                    <a href="#servicos">Serviços</a>
                 </li>
                 <li>
                     <a href="#contato">Contatos</a>
                 </li>
                 <li>
-                    
-                </li>
+           
+                <a href="#associado">Associado</a>
+            </li>
             </ul>
         </nav>
-        <aside class="autenticacao">
-            
-            <a href="#" class="botao destaque"> &#x1F512 Associado</a>
+        <aside>
+            <a href="facebook.com"></a>
         </aside>
+        
     </header>
 
     <script>
         window.onhashchange = function (e) {
-            const oldURL = e.oldURL.split('#')[1]
+            
             const newURL = e.newURL.split('#')[1]
-            console.log(oldURL,newURL)
+            const oldURL = e.oldURL.split('#')[1]
+
+            //console.log(newURL,oldURL)
+            
+           
             const oldMenu = document.querySelector(`.menu a[href='#${oldURL}']`)
             const newMenu = document.querySelector(`.menu a[href='#${newURL}']`)
             oldMenu && oldMenu.classList.remove('selected')
