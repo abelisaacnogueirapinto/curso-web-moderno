@@ -45,8 +45,10 @@ body {
 }
 
 .exercicio div:nth-of-type(4) {
-    background-color: darkorchid;
+    background-color: rgb(27, 45, 211);
 }
+
+
 
 .exercicio .destaque {
     border: solid 10px greenyellow;
