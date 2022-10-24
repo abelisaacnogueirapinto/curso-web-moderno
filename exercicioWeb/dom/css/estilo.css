@@ -51,7 +51,7 @@ body {
 
 
 .exercicio .destaque {
-    border: solid 10px greenyellow;
-    color: greenyellow;
+    border: solid 10px rgb(24, 223, 34);
+    color: rgb(17, 184, 67);
     font-weight: bold;
 }

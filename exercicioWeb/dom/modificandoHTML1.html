@@ -20,7 +20,7 @@
         const div2 = document.createElement('div')
         div2.setAttribute('wm-atributo', 'valor')
         div2.innerHTML = 'S E G U N D O'
-
+        
         const p = document.createElement('p')
         p.innerHTML='T E R C E I R O'
         const div3 = document.createElement('div')
@@ -33,12 +33,16 @@
 
         const texto = document.createTextNode('Antes ...')
         div3.insertBefore(texto,div3.childNodes[0])
+
+        
+        body.appendChild(div2)
         
         
 
         const div4 = div3.cloneNode(true)
         div3.append(img)
         body.appendChild(div4)
+        div3.remove(div3)
         
 
         
