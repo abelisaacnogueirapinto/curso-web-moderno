@@ -16,13 +16,63 @@
             padding: 0px 25px;
             margin: 10px;
         }
+        #cabecape  {
+            font-size: .6em;
+                       
+        } 
+        #cabecape>button {
+            display:none;
+        }
     </style>
 </head>
 
 <body class='conteudo exercicio'>
+
+   
+   
+    <header wm-relogio='1000' id="cabecape"></header>
     <h1>Manipulando Atributos</h1>
     <div wm-relogio='1000'></div>
+    <footer wm-relogio='1000' id="cabecape"></footer>
+
+
     <script>
-        // ...
+      function Relogio(elemento) {
+        const horaCerta = $('<p>')
+        const botaoMenos = $('<button>').html('-') // frequencia maior ou seja mais segundos
+        const botaoMais  = $('<button>').html('+') // frequencia menor ou seja atualizaçao em menos segundos
+        
+        const $elemento = $(elemento)
+        $elemento.append(horaCerta,botaoMenos, botaoMais).css('border','1px solid blue') 
+
+        const getIntervalorAtual = () => parseInt($elemento.attr('wm-relogio'))
+
+        let temporizador =null
+        const iniciar = () => {
+            if(temporizador) clearInterval(temporizador)
+            temporizador = setInterval(() => {
+                horaCerta.html(new Date().toLocaleString('pt-BR'))
+            },getIntervalorAtual())
+        }
+
+        const alterarIntervalo = delta => {
+            const novo = Math.max(getIntervalorAtual() + delta, 1000)
+            $elemento.attr('wm-relogio', novo)
+            iniciar()
+        }
+
+        botaoMenos.click(e => alterarIntervalo(1000))
+        botaoMais.click(e => alterarIntervalo(-1000))
+        iniciar()
+        
+      } 
+
+      $('[wm-relogio]').each((i,e) => new Relogio(e))
+
+      $('[wm-relogio]').attr({opa:1, novo: true})
+      $('[wm-relogio]').removeAttr('opa').removeAttr('novo')
+
+
+
     </script>
 </body>

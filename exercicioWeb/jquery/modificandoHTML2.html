@@ -13,10 +13,35 @@
     <div id='div1'>1</div>
     <div id='div2'>2</div>
     <div id='div3'>3</div>
+    <p class='numero'>A</p>
     <p class='numero'>4</p>
     <p class='numero'>5</p>
+    <p class='numero'>6</p>
 
     <script>
-       
+        const teste = "2"
+       $('#div1').append(',',teste)
+       $('#div1').prepend('0,') // adiciona o  conteudo antes
+
+       $('<span>,3</span>').appendTo('#div1')
+       $('<span>-1, </span>').prependTo('#div1')
+
+       $('#div2').before('<p>Antes 2</p>')
+       $('#div2').after('<p>Depois 2</p>')
+
+       $('<p>Antes 3</p>').insertBefore('#div3')
+       $('<p>depois 3</p>').insertAfter('#div3')
+
+      // $('p.numero').wrap('<div>')
+       $('p.numero').wrapAll('<div id="div4">') // coloca div EM TODAS class = numero do paragrafo (em uma unica div)
+       $("#div4").empty()
+       $('#div3, #div4').prev().remove() // remove os elementos antes da div3 e div4
+
+       //$('<div>Abel</div>').replaceAll('body > p') //subtitui  todos paragrafos por div  dentro do body
+       //$('body > p').replaceWith('<div>Isaac</div>') //mesmo de cima
+
+        $('body > p').replaceWith(function() {
+            return $('<div>').html($(this).html()).append('!!!').append('Sinuca') // substitui mas como opçoes diversas com callback
+        })
     </script>
 </body>

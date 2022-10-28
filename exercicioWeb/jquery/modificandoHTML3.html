@@ -13,13 +13,39 @@
     <div id='conteudo'></div>
 
     <script>
-        const pessoas = [
+        
+        $(function() {        
+          const pessoas = [
             { nome: 'Ana', nota: 9.1 },
             { nome: 'Bianca', nota: 8.4 },
             { nome: 'Carlos', nota: 7.6 },
             { nome: 'Julia', nota: 9.7 }
-        ]
-        
-        // ...
+            ]
+            var somaNotas = 0
+            const linhas = pessoas.map(aluno => {
+                const tdNome = $('<td>').html(aluno.nome)
+                const tdNota = $('<td>').html(aluno.nota)
+                somaNotas += aluno.nota 
+                
+                return  $('<tr>').append(tdNome,tdNota)     
+            })
+            
+            function soma() {
+                const tdTotal = $('<td>').html('Total')
+                const tdValor = $('<td>').html(somaNotas)
+                
+                return $('<tr>').append(tdTotal,tdValor).css('color','black')
+                
+            }
+            
+            const tabela = $('<table>').append(linhas).append(soma())
+               
+                
+            
+            $('#conteudo').append(tabela)
+           
+            
+        })
+       
     </script>
 </body>

@@ -15,6 +15,18 @@
     <div id='div3'>3</div>
     <div id='resultado'></div>
     <script>
-        // ...
+       const cor = $('#div1').css('background-color')
+       $('#resultado').append(`a cor é ${cor}`)
+
+       $('#div1').css('font-size','3em')
+       $('#div1').css({'font-size': '4em', 'color': 'blue', 'background': 'yellow'}) 
+       $('#div1').css('font-size', function() {
+          return `${3 * 2}em`
+       })
+
+       $('#div3').addClass('destaque')
+       $('#div3').toggleClass('destaque')// retira ou coloca a classe
+       
+       const temClasse =$('#div2').hasClass('destaque') // a variavel recebera um bolian true ou false
     </script>
 </body>
